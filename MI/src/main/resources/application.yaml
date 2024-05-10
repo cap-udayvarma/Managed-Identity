@@ -1,0 +1,23 @@
+# Common configurations for both local and cloud environments
+spring:
+  application:
+    name: MI
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# Cloud environment configurations
+---
+spring:
+  profiles: cloud
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://sevent5-test.database.windows.net:1433;database=seven;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;authentication=ActiveDirectoryManagedIdentity
+
+# Local environment configurations
+---
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://sevent5-test.database.windows.net:1433;database=seven;user=uday@sevent5-test;password=@Capgemini1234;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30
