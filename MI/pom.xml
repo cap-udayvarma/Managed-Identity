@@ -57,7 +57,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>seventy5</finalName>
+		<finalName>seventy5-docker</finalName>
 	</build>
 
 </project>
